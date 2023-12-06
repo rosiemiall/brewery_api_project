@@ -1,4 +1,5 @@
-const BreweryList = () => {
+import Brewery from "./Brewery";
+const BreweryList = ({breweries}) => {
     return ( 
         <></>
      );
