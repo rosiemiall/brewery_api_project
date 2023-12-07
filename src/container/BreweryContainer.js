@@ -2,12 +2,13 @@ import { useEffect, useState } from "react";
 import BreweryList from "../components/BreweryList";
 import searchForm from "../components/searchForm";
 import FavouritesList from "../components/FavouritesList";
-
+import RandomBrewery from "../components/RandomBrewery";
 
 const BreweryContainer = () => {
     const [breweries, setBreweries] = useState([]);
     const [favouriteBreweries, setFavouriteBreweries] = useState([]);
     const [filteredBreweries, setFilteredBreweries] = useState([]);
+    const [randomBrewery, setRandomBrewery] = useState([]);
 
     const fetchBreweries = async () => {
         const response = await fetch("https://api.openbrewerydb.org/v1/breweries");
@@ -18,9 +19,19 @@ const BreweryContainer = () => {
         console.log(breweries);
     }
 
+    const fetchRandomBrewery = async () => {
+        const response = await fetch("https://api.openbrewerydb.org/v1/breweries/random");
+        const data = await response.json();
+
+        setRandomBrewery(data);
+    } 
+
     useEffect(() => {
         fetchBreweries();
+        // fetchRandomBrewery();
     },[])
+
+
 
     const  handleFavouriteBrewery = (brewery) => {
         setFavouriteBreweries([...favouriteBreweries, brewery]);
@@ -40,9 +51,19 @@ const BreweryContainer = () => {
         setFilteredBreweries(filteredList);
     }
 
+    const handleRandomClick = () => {
+        fetchRandomBrewery();
+    }
+
     return ( 
         <>
         <h1 id="title">Your Favourite Brewery Organiser</h1>
+        <article>
+        <button className="button" onClick={handleRandomClick} >Suggest a brewery</button>
+        {/* <RandomBrewery randomBrewery={randomBrewery}/> */}
+        <BreweryList breweries={randomBrewery}/>
+        </article>
+
         <article className="lists" >
         <h1>All Breweries 🍻</h1>
         <input id="search" type="text" onChange={filterBreweries} placeholder="Search by Name"></input>
