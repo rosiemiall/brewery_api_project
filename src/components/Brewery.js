@@ -11,12 +11,12 @@ const Brewery = ({brewery, handleFavouriteBrewery}) => {
     }
     return ( 
         <>
-            <li>
+            <p>
                 {brewery.name}
-                <button> Visited </button>
-                <button onClick={handleClick} > 🤍 </button>
+                <button className="button"> Visited </button>
+                <button className="button" onClick={handleClick} > 🤍 </button>
                
-            </li>
+            </p>
         </>
      );
 }

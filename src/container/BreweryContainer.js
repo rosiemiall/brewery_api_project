@@ -42,17 +42,18 @@ const BreweryContainer = () => {
 
     return ( 
         <>
-        <input type="text" onChange={filterBreweries} placeholder="Search by Name"></input>
-        <section className="Lists">
+        <h1 id="title">Your Favourite Brewery Organiser</h1>
+        <article className="lists" >
         <h1>All Breweries 🍻</h1>
+        <input id="search" type="text" onChange={filterBreweries} placeholder="Search by Name"></input>
         <BreweryList breweries={filteredBreweries}
         handleFavouriteBrewery={handleFavouriteBrewery}
         />
-        </section>
-        <section className="Lists">
+        </article>
+        <article className="lists">
         <h1>Favourites 🤍</h1>
         <FavouritesList favouriteBreweries={favouriteBreweries} handleRemoveFavouriteBrewery={handleRemoveFavouriteBrewery}/>
-        </section>
+        </article>
         </>
      );
 }
