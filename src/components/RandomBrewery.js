@@ -4,7 +4,7 @@ const RandomBrewery = ({randomBrewery}) => {
     return ( 
         <>
             <p>
-                {randomBrewery[0].name}
+                {randomBrewery.name}
 
                 {/* <button className="button"> Visited </button>
                 <button className="button" onClick={handleClick} > 🤍 </button>

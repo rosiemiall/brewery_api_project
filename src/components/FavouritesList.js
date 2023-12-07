@@ -13,7 +13,9 @@ const FavouritesList = ({favouriteBreweries, handleRemoveFavouriteBrewery}) => {
 
     return ( 
         <>
+        <article id="para2">
         {mapBreweries}
+        </article>
         </>
      );
 }

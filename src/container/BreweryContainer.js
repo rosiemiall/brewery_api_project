@@ -16,23 +16,20 @@ const BreweryContainer = () => {
 
         setBreweries(data);
         setFilteredBreweries(data);
-        console.log(breweries);
     }
 
-    const fetchRandomBrewery = async () => {
-        const response = await fetch("https://api.openbrewerydb.org/v1/breweries/random");
-        const data = await response.json();
-
-        setRandomBrewery(data);
-    } 
+        const fetchRandomBrewery = async () => {
+            const response = await fetch(`https://api.openbrewerydb.org/v1/breweries/random`);
+            const data = await response.json();
+            
+            setRandomBrewery(data);
+        } 
 
     useEffect(() => {
         fetchBreweries();
         // fetchRandomBrewery();
     },[])
-
-
-
+   
     const  handleFavouriteBrewery = (brewery) => {
         setFavouriteBreweries([...favouriteBreweries, brewery]);
         }
@@ -53,15 +50,18 @@ const BreweryContainer = () => {
 
     const handleRandomClick = () => {
         fetchRandomBrewery();
+        console.log(randomBrewery);
     }
+
+    
 
     return ( 
         <>
         <h1 id="title">Your Favourite Brewery Organiser</h1>
-        <article>
+        <article id="suggest">
         <button className="button" onClick={handleRandomClick} >Suggest a brewery</button>
         {/* <RandomBrewery randomBrewery={randomBrewery}/> */}
-        <BreweryList breweries={randomBrewery}/>
+        <BreweryList breweries={randomBrewery} handleFavouriteBrewery={handleFavouriteBrewery}/>
         </article>
 
         <article className="lists" >

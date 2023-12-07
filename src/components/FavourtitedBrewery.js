@@ -7,8 +7,8 @@ const FavouritedBrewery = ({favouritedBrewery, handleRemoveFavouriteBrewery}) =>
     return ( 
         <>
             <p>
-                {favouritedBrewery.name}
                 <button className="button" onClick={handleClick}> ❤️ </button>
+                {favouritedBrewery.name}
             </p>
         </>
      );

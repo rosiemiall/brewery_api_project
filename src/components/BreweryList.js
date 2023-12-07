@@ -12,7 +12,9 @@ const BreweryList = ({breweries, handleFavouriteBrewery}) => {
 
     return ( 
         <>
+        <article id="para">
         {mapBreweries}
+        </article>
         </>
      );
 }

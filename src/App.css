@@ -3,30 +3,59 @@ body {
   text-align: center;
 }
 
+
 #title{
   color: #E4D6A7;
+  font-family: Trattatello, fantasy;
 }
 
 .lists {
-background-color: #E9B44C;
-border-radius: 20px;
-display: inline-table;
-margin: 20px;
-color: #9B2915;
-text-align: center;
-padding: 10px;
-width: 40%;
+  background-color: #E9B44C;
+  border-radius: 20px;
+  display: inline-table;
+  margin: 20px;
+  color: #9B2915;
+  text-align: center;
+  padding: 10px;
+  width: 40%;
+  font-family: Luminari, fantasy;
 }
 
- #search {
+#search {
   width: 80%;
   background-color: #E4D6A7;
   border-radius: 10px;
   border-color: #E4D6A7;
+  color: #1C110A;
+  text-align: center;
+  font-family: Marker Felt, fantasy;
 }
 
 .button {
   background-color: #E4D6A7;
   border-radius: 10px;
   border-color: #E4D6A7;
+  color: #1C110A;
+  height: 30px;
+  font-family: Marker Felt, fantasy;
+}
+
+#suggest {
+  background-color: #E9B44C;
+  border-radius: 20px;
+  margin: 20px;
+  color: #9B2915;
+  /* min-width:max-content; */
+  padding: 10px;
+  text-align: center;
+  /* display: inline-block; */
+  float: center;
+  font-family: Luminari, fantasy;
+}
+
+#para{
+  text-align: right;
+}
+#para2{
+  text-align: left;
 }
