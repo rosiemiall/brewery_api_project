@@ -7,12 +7,14 @@ import FavouritesList from "../components/FavouritesList";
 const BreweryContainer = () => {
     const [breweries, setBreweries] = useState([]);
     const [favouriteBreweries, setFavouriteBreweries] = useState([]);
+    const [filteredBreweries, setFilteredBreweries] = useState([]);
 
     const fetchBreweries = async () => {
         const response = await fetch("https://api.openbrewerydb.org/v1/breweries");
         const data = await response.json();
 
         setBreweries(data);
+        setFilteredBreweries(data);
         console.log(breweries);
     }
 
@@ -35,9 +37,7 @@ const BreweryContainer = () => {
     const filterBreweries = (event) => {
         const filteredList = breweries.filter((brewery) => brewery.name.toLowerCase().includes(event.target.value.toLowerCase()))
 
-        if (filteredList.length > 0) {
-            setBreweries(filteredList);
-        }
+        setFilteredBreweries(filteredList);
     }
 
     return ( 
@@ -45,7 +45,7 @@ const BreweryContainer = () => {
         <input type="text" onChange={filterBreweries} placeholder="Search by Name"></input>
         <section className="Lists">
         <h1>All Breweries 🍻</h1>
-        <BreweryList breweries={breweries}
+        <BreweryList breweries={filteredBreweries}
         handleFavouriteBrewery={handleFavouriteBrewery}
         />
         </section>
