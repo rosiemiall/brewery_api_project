@@ -75,7 +75,12 @@ const BreweryContainer = () => {
         <h1>Favourites 🤍</h1>
         <FavouritesList favouriteBreweries={favouriteBreweries} handleRemoveFavouriteBrewery={handleRemoveFavouriteBrewery}/>
         </article>
+        <section id="images">
+        <img src="sunsetBeer.png" alt="sunset beer" id="sunset-beer"/>
+        <img src="cans.png" alt="beer cans" id="cans"/>
+        </section>
         </>
+        
      );
 }
  

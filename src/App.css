@@ -59,3 +59,15 @@ body {
 #para2{
   text-align: left;
 }
+
+#sunset-beer{
+  max-width: 50%;
+  max-height: 50%;
+}
+#cans{
+  max-width: 50%;
+  max-height: 50%;
+}
+#images{
+  display: flex;
+}
